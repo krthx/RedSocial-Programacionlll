@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSocial-Programacionlll", "RedSocial-Programacionlll\RedSocial-Programacionlll.csproj", "{7691B38A-304D-47AC-9260-B972ACE781C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSocial-Programacionlll.Datos", "RedSocial-Programacionlll.Datos\RedSocial-Programacionlll.Datos.csproj", "{B7518246-CE27-4154-8B23-A7E90B04EBD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7691B38A-304D-47AC-9260-B972ACE781C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7691B38A-304D-47AC-9260-B972ACE781C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7691B38A-304D-47AC-9260-B972ACE781C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7691B38A-304D-47AC-9260-B972ACE781C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7518246-CE27-4154-8B23-A7E90B04EBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7518246-CE27-4154-8B23-A7E90B04EBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7518246-CE27-4154-8B23-A7E90B04EBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7518246-CE27-4154-8B23-A7E90B04EBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E550685-13D3-4E66-A3F2-1E113B01105D}
+	EndGlobalSection
+EndGlobal

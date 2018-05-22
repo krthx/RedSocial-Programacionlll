@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RedSocial_Programacionlll.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+    <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%: Page.Title %> - Proyecto Final</title>
+        <link href="Content/Recursos/Css/Sitio.css" rel="stylesheet" />
+        <asp:PlaceHolder runat="server">
+            <%: Styles.Render("~/bundles/css") %>
+            <%: Scripts.Render("~/bundles/modernizr") %>
+            <%: Scripts.Render("~/bundles/WebFormsJs") %>
+            <%: Scripts.Render("~/bundles/MsAjaxJs") %>
+            <%: Scripts.Render("~/bundles/extra") %>
+        </asp:PlaceHolder>
+
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    </head>
+    <body>
+        <asp:ContentPlaceHolder ID="Background" runat="server"></asp:ContentPlaceHolder>
+        <form runat="server">
+            <div class="ui container">
+                <br />
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                
+            </div>
+        </form>
+    </body>
+</html>
