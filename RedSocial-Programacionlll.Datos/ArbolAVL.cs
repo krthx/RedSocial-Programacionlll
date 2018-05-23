@@ -406,5 +406,19 @@ namespace RedSocial_Programacionlll.Datos
 
             return null;
         }
+        
+        public static ListaEnlazada BuscarCoincidencias(ListaEnlazada Resultado, Nodo n, Comparador v)
+        {
+            if (n != null)
+            {
+                if(v.Contains(n.Dato))
+                    Resultado.Agregar((Usuario)n.Dato);
+
+                BuscarCoincidencias(Resultado, n.Izquierdo, v);
+                BuscarCoincidencias(Resultado, n.Derecho, v);
+            }
+
+            return Resultado;
+        }
     }
 }

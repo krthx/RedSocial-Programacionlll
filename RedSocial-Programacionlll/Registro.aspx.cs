@@ -19,7 +19,7 @@ namespace RedSocial_Programacionlll
 
             try
             {
-                ListaContext.Usuarios.Insertar(new Usuario(ListaContext.Nuevo) { Nombre = nombre, NombreUsuario = usuario, FechaNacimiento = fecha, Contrasena = contrasena });
+                ListaContext.Usuarios.Insertar(new Usuario(ListaContext.Nuevo) { Nombre = nombre, NombreUsuario = usuario, FechaNacimiento = fecha, Contrasena = contrasena, Creacion = DateTime.Today });
 
                 Response.Redirect("InicioSesion.aspx");
             }

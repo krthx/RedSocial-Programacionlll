@@ -11,5 +11,47 @@ namespace RedSocial_Programacionlll
         {
             Usuario = ListaContext.Conectado;
         }
+
+        protected void AgregarPublicacion(object sender, EventArgs e)
+        {            
+            ListaContext.Conectado.Publicaciones.Agregar(new Publicacion(true) { Descripcion = TxtPublicacion.Text, FechaCreacion = DateTime.Now });
+
+            TxtPublicacion.Text = String.Empty;
+        }
+
+        protected void Seguir(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Eliminar(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Buscar(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ActualizarDatos(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void EliminarCuenta(object sender, EventArgs e)
+        {
+            
+        }
+
+        ListaDobleEnlazada ArmarMuro()
+        {
+            return null;
+        }
+
+        protected void EliminarPublicacion(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+} 

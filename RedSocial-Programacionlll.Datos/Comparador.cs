@@ -27,5 +27,6 @@ namespace RedSocial_Programacionlll.Datos
         //bool IdMenorQue(Object q);
 
         //bool IdMayorQue(Object q);
+        bool Contains(Object q);
     }
 }

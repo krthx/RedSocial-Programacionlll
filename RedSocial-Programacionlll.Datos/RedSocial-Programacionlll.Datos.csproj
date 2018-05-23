@@ -47,8 +47,11 @@
     <Compile Include="ArbolBinario.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="ListaDobleEnlazada.cs" />
+    <Compile Include="ListaEnlazada.cs" />
     <Compile Include="NodoListaEnlazada.cs" />
+    <Compile Include="NodoSimple.cs" />
     <Compile Include="Publicacion.cs" />
+    <Compile Include="Tarea.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Comparador.cs" />
     <Compile Include="Logical.cs" />
@@ -58,6 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

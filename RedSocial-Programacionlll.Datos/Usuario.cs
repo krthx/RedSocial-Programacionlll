@@ -23,6 +23,8 @@ namespace RedSocial_Programacionlll.Datos
 
         public ListaDobleEnlazada Publicaciones { get; set; }
 
+        public ListaDobleEnlazada Muro { get; set; }
+
         public Usuario(Boolean nuevo)
         {
             if (nuevo)
@@ -31,6 +33,7 @@ namespace RedSocial_Programacionlll.Datos
                 Seguidores = new Hash();
                 Seguidos = new Hash();
                 Publicaciones = new ListaDobleEnlazada();
+                Muro = new ListaDobleEnlazada();
             }
                 
         } 
@@ -49,12 +52,19 @@ namespace RedSocial_Programacionlll.Datos
         {
             return Comparar(q) < 0;
         }
+        bool Comparador.Contains(object q)
+        {
+            return NombreUsuario.Contains(Convertir(q).NombreUsuario);
+        }
 
         Int32 Comparar(object _q)
         {
-            Usuario obj = (Usuario)_q;
+            return NombreUsuario.CompareTo(Convertir(_q).NombreUsuario);
+        }
 
-            return NombreUsuario.CompareTo(obj.NombreUsuario);
+        Usuario Convertir(object _q)
+        {
+            return (Usuario)_q;
         }
     }
 }

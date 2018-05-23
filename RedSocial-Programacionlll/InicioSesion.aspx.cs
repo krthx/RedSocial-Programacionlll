@@ -25,7 +25,7 @@ namespace RedSocial_Programacionlll
             if (!resultado.Equals("Ok"))
                 ErrorMessage.Text = resultado;
             else
-                Response.Redirect("Perfil.aspx");
+                Response.Redirect("Tablero.aspx");
         }
     }
 }

@@ -112,3 +112,5 @@ C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll\bin\System.Web.Optimization.xml
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll\bin\RedSocial-Programacionlll.Datos.dll
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll\bin\RedSocial-Programacionlll.Datos.pdb
+C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll\bin\log4net.dll
+C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll\bin\log4net.xml

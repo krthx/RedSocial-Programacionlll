@@ -14,10 +14,14 @@ namespace RedSocial_Programacionlll.Datos
 
         public DateTime FechaCreacion { get; set; }
 
+        public Int32 Likes { get; set; }
+
+        public Int32 Dislikes { get; set; }
+
         public Publicacion(Boolean nuevo)
         {
             if (nuevo)
-                Id = new Guid();
+                Id = Guid.NewGuid();
         }
         
         bool Comparador.IgualQue(object q)
@@ -40,6 +44,11 @@ namespace RedSocial_Programacionlll.Datos
             Publicacion obj = (Publicacion)_q;
 
             return Id.CompareTo(obj.Id);
+        }
+
+        bool Comparador.Contains(object q)
+        {
+            throw new NotImplementedException();
         }
     }
 }
