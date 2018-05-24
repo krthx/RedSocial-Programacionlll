@@ -26,24 +26,26 @@ namespace RedSocial_Programacionlll.Datos
         
         bool Comparador.IgualQue(object q)
         {
-            return Comparar(q) == 0;
+            //return Comparar(q) == 0;
+            return false;
         }
 
         bool Comparador.MayorQue(object q)
         {
-            return Comparar(q) > 0;
+            return Comparar(q) == false;
         }
 
         bool Comparador.MenorQue(object q)
         {
-            return Comparar(q) < 0;
+            return Comparar(q) == true;
         }
 
-        Int32 Comparar(object _q)
+        Boolean Comparar(object _q)
         {
             Publicacion obj = (Publicacion)_q;
 
-            return Id.CompareTo(obj.Id);
+            //return Id.CompareTo(obj.Id);
+            return FechaCreacion < obj.FechaCreacion;
         }
 
         bool Comparador.Contains(object q)

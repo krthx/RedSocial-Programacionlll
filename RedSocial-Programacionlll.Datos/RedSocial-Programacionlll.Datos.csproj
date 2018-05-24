@@ -43,20 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArbolAVL.cs" />
-    <Compile Include="ArbolBinario.cs" />
-    <Compile Include="Hash.cs" />
-    <Compile Include="ListaDobleEnlazada.cs" />
-    <Compile Include="ListaEnlazada.cs" />
-    <Compile Include="NodoListaEnlazada.cs" />
-    <Compile Include="NodoSimple.cs" />
+    <Compile Include="Arboles\ArbolAVL.cs" />
+    <Compile Include="Arboles\ArbolBinario.cs" />
+    <Compile Include="Hash\Hash.cs" />
+    <Compile Include="Listas\ListaDobleEnlazada.cs" />
+    <Compile Include="Listas\ListaEnlazada.cs" />
+    <Compile Include="Listas\NodoListaEnlazada.cs" />
+    <Compile Include="Listas\NodoSimple.cs" />
     <Compile Include="Publicacion.cs" />
-    <Compile Include="Tarea.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Comparador.cs" />
-    <Compile Include="Logical.cs" />
+    <Compile Include="Arboles\Logical.cs" />
     <Compile Include="Nodo.cs" />
-    <Compile Include="NodoAvl.cs" />
+    <Compile Include="Arboles\NodoAvl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

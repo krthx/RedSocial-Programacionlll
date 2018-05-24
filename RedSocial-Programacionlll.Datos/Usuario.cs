@@ -5,6 +5,7 @@ namespace RedSocial_Programacionlll.Datos
     public class Usuario : Comparador
     {
         public Guid Id { get; set; }
+        
         public String NombreUsuario { get; set; }
 
         public String Nombre { get; set; }
@@ -21,21 +22,19 @@ namespace RedSocial_Programacionlll.Datos
 
         public Hash Seguidos { get; set; }
 
-        public ListaDobleEnlazada Publicaciones { get; set; }
+        public ListaDobleEnlazada<Publicacion> Publicaciones { get; set; }
 
-        public ListaDobleEnlazada Muro { get; set; }
+        public ListaDobleEnlazada<Publicacion> Muro { get; set; }
 
         public Usuario(Boolean nuevo)
         {
             if (nuevo)
-            {
-                Id = new Guid();
-                Seguidores = new Hash();
-                Seguidos = new Hash();
-                Publicaciones = new ListaDobleEnlazada();
-                Muro = new ListaDobleEnlazada();
-            }
+                Id = Guid.NewGuid();
                 
+            Seguidores = new Hash();
+            Seguidos = new Hash();
+            Publicaciones = new ListaDobleEnlazada<Publicacion>();
+            Muro = new ListaDobleEnlazada<Publicacion>();
         } 
 
         bool Comparador.IgualQue(object q)

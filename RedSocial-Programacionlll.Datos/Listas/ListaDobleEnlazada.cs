@@ -1,9 +1,12 @@
-﻿namespace RedSocial_Programacionlll.Datos
+﻿using System;
+
+namespace RedSocial_Programacionlll.Datos
 {
-    public class ListaDobleEnlazada
+    public class ListaDobleEnlazada<T>
     {
-        public NodoListaEnlazada Primero { get; set; }
-        public NodoListaEnlazada Ultimo { get; set; }
+        public Int32 Count { get; set; }
+        public NodoListaEnlazada<T> Primero { get; set; }
+        public NodoListaEnlazada<T> Ultimo { get; set; }
 
         public ListaDobleEnlazada()
         {
@@ -11,11 +14,11 @@
             Ultimo = null;
         }
 
-        public virtual void Agregar(object valor)
+        public virtual void Agregar(T valor)
         {
             Comparador c = (Comparador)valor;
            
-            NodoListaEnlazada nuevo = new NodoListaEnlazada(c);
+            NodoListaEnlazada<T> nuevo = new NodoListaEnlazada<T>(c);
 
             if (Primero == null)
             {
@@ -27,7 +30,7 @@
             }
             else
             {
-                NodoListaEnlazada aux = Primero;
+                NodoListaEnlazada<T> aux = Primero;
 
                 while (aux != null && c.MenorQue(aux.Dato)) //aux.Valor < valor
                 {
@@ -51,6 +54,12 @@
                     nuevo.Siguiente = aux;
                 }
             }
+
+            Count++;
+        }
+
+        public void Eliminar(T valor)
+        {
         }
     }
 }

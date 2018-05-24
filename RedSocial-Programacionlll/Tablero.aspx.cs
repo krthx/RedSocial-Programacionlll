@@ -44,7 +44,7 @@ namespace RedSocial_Programacionlll
             
         }
 
-        ListaDobleEnlazada ArmarMuro()
+        ListaDobleEnlazada<Publicacion> ArmarMuro()
         {
             return null;
         }

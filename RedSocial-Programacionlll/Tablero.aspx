@@ -27,13 +27,49 @@
                     <i class="user icon"></i>
                     <%: Usuario.Seguidos.Count %> Seguidos
                 </a>
+              <a>
+                  <i class="paper plane icon"></i>
+                    <%: Usuario.Publicaciones.Count %> Pubs
+              </a>
           </div>
         </div>
 
         <h3>Seguidos</h3>
         <hr />
         <div class="ui middle aligned selection list" style="height: 300px; margin-top: 10px; overflow-y: scroll">
-          <div class="item">
+            <% var Enumerator_ = Usuario.Seguidores.EnumeratorList;%>
+            <% var NodoSeg = Enumerator_.Inicio; %>
+
+
+            <% while (NodoSeg != null) { %>
+	            <% var Registro = Usuario.Seguidores.Buscar(NodoSeg.Dato); %>
+                <% if(typeof(Usuario).Equals(Registro.GetType())) {%>
+    
+                    <div class="item">
+		                <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                <div class="content">
+		                  <div class="header"><%: ((Usuario)Registro).NombreUsuario %></div>
+		                </div>
+		            </div>
+
+	            <%} else {%>
+		            <% var Complex = (ListaEnlazada<Usuario>)Registro; %>
+                    <% var NodoComp = Complex.Inicio; %>
+                    <% while (NodoComp != null) { %>
+                        <div class="item">
+		                    <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                    <div class="content">
+		                      <div class="header"><%: ((Usuario)NodoComp.Dato).NombreUsuario %></div>
+		                    </div>
+		                </div>
+                       <% NodoComp = NodoComp.Enlace; %>
+                    <% } %>
+
+	            <% } %>
+
+               <% NodoSeg = NodoSeg.Enlace; %>
+            <% } %>
+          <%--<div class="item">
             <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
             <div class="content">
               <div class="header">Helen</div>
@@ -80,13 +116,45 @@
             <div class="content">
               <div class="header">Daniel</div>
             </div>
-          </div>
+          </div>--%>
         </div>
           
         <h3>Seguidores</h3>
         <hr />
         <div class="ui middle aligned selection list" style="height: 300px; margin-top: 10px;  overflow-y: scroll">
-          <div class="item">
+            <% var EnumeratorS = Usuario.Seguidos.EnumeratorList;%>
+            <% var NodoSeg2 = EnumeratorS.Inicio; %>
+
+
+            <% while (NodoSeg2 != null) { %>
+	            <% var Registro2 = Usuario.Seguidos.Buscar(NodoSeg2.Dato); %>
+                <% if(typeof(Usuario).Equals(Registro2.GetType())) {%>
+    
+                    <div class="item">
+		                <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                <div class="content">
+		                  <div class="header"><%: ((Usuario)Registro2).NombreUsuario %></div>
+		                </div>
+		            </div>
+
+	            <%} else {%>
+		            <% var Complex2= (ListaEnlazada<Usuario>)Registro2; %>
+                    <% var NodoComp2 = Complex2.Inicio; %>
+                    <% while (NodoComp2 != null) { %>
+                        <div class="item">
+		                    <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                    <div class="content">
+		                      <div class="header"><%: ((Usuario)NodoComp2.Dato).NombreUsuario %></div>
+		                    </div>
+		                </div>
+                       <% NodoComp2 = NodoComp2.Enlace; %>
+                    <% } %>
+
+	            <% } %>
+
+               <% NodoSeg2 = NodoSeg2.Enlace; %>
+            <% } %>
+          <%--<div class="item">
             <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
             <div class="content">
               <div class="header">Helen</div>
@@ -103,7 +171,7 @@
             <div class="content">
               <div class="header">Daniel</div>
             </div>
-          </div>
+          </div>--%>
         </div>
       </div>
       <div class="column" style="width: 70%;">
@@ -126,10 +194,10 @@
             </div>
         </div>
         <div class="ui segment" style="background: #f1f1f1; height: auto; min-height: 500px;">
-            <% var Nodo = Usuario.Publicaciones.Primero; %>
+            <% var NodoPub = Usuario.Publicaciones.Primero; %>
             
-            <% while (Nodo != null) { %>
-                <% var Pub = (Publicacion) Nodo.Dato; %>
+            <% while (NodoPub != null) { %>
+                <% var Pub = (Publicacion) NodoPub.Dato; %>
                 <div class="ui raised card" style="width: 100%;">
                   <div class="content">
                     <div class="header"><%: Usuario.Nombre %></div>
@@ -148,7 +216,7 @@
                     </div>
                   </div>
                 </div>
-               <% Nodo = Nodo.Siguiente; %>
+               <% NodoPub = NodoPub.Siguiente; %>
             <% } %>
         </div>
       </div>

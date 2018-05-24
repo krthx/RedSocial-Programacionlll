@@ -407,7 +407,7 @@ namespace RedSocial_Programacionlll.Datos
             return null;
         }
         
-        public static ListaEnlazada BuscarCoincidencias(ListaEnlazada Resultado, Nodo n, Comparador v)
+        public static ListaEnlazada<Usuario> BuscarCoincidencias(ListaEnlazada<Usuario> Resultado, Nodo n, Comparador v)
         {
             if (n != null)
             {
