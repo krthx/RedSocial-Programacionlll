@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarInfo.aspx" />
     <Content Include="Content\Framework\JQuery\jquery-3.3.1.min.js" />
     <Content Include="Content\Framework\Modernizr\modernizr-2.6.2.js" />
     <Content Include="Content\Framework\SemanticUI\semantic.min.css" />
@@ -176,13 +177,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarInfo.aspx.cs">
+      <DependentUpon>ActualizarInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarInfo.aspx.designer.cs">
+      <DependentUpon>ActualizarInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Lista.cs" />
     <Compile Include="Tablero.aspx.cs">
       <DependentUpon>Tablero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,6 +244,7 @@
     <Content Include="Content\Framework\SemanticUI\themes\default\assets\fonts\outline-icons.woff" />
     <Content Include="Content\Framework\SemanticUI\themes\default\assets\fonts\outline-icons.woff2" />
     <Content Include="log4net.config" />
+    <Content Include="Content\Recursos\Js\site.js" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -248,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Recursos\Js\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RedSocial-Programacionlll.Datos\RedSocial-Programacionlll.Datos.csproj">

@@ -12,6 +12,8 @@ namespace RedSocial_Programacionlll.Source
         public const Boolean Busqueda = false;
         public static Usuario Conectado { get; set; }
 
+        public static Usuario Visitar { get; set; }
+
         public static ArbolAVL Ctx = null;
 
         public static readonly object Padlock = new object();
@@ -47,5 +49,19 @@ namespace RedSocial_Programacionlll.Source
             return "Ok";
         }
 
+        public static void BuscarPerfil(String usuario)
+        {
+            var resultado = Usuarios.Buscar(new Usuario(ListaContext.Busqueda) { NombreUsuario = usuario });
+            
+            if (resultado != null)
+                Visitar = (Usuario)resultado;
+        }
+
+        public static ListaEnlazada<Usuario> BuscarCoincidencias(String b)
+        {            
+            var c = Usuarios.BuscarCoincidencias(new ListaEnlazada<Usuario>(), Usuarios.Raiz, new Usuario(Busqueda) { NombreUsuario = b });
+
+            return c;
+        }
     }
 }

@@ -9,7 +9,12 @@ namespace RedSocial_Programacionlll
         public Usuario Usuario = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario = ListaContext.Conectado;
+            Usuario = ListaContext.Visitar;
+        }
+
+        protected void Regresar(object sender, EventArgs e)
+        {
+            Response.Redirect("Tablero.aspx");
         }
     }
 }

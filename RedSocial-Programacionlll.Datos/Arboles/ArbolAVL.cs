@@ -7,7 +7,7 @@ namespace RedSocial_Programacionlll.Datos
     {
         private readonly ILog Bitacora = LogManager.GetLogger("Bitacora");
 
-        protected NodoAvl Raiz;
+        public NodoAvl Raiz;
 
         public int NumeroClientes { get; set; }
 
@@ -407,15 +407,15 @@ namespace RedSocial_Programacionlll.Datos
             return null;
         }
         
-        public static ListaEnlazada<Usuario> BuscarCoincidencias(ListaEnlazada<Usuario> Resultado, Nodo n, Comparador v)
+        public ListaEnlazada<Usuario> BuscarCoincidencias(ListaEnlazada<Usuario> Resultado, NodoAvl n, Comparador v)
         {
             if (n != null)
             {
                 if(v.Contains(n.Dato))
                     Resultado.Agregar((Usuario)n.Dato);
 
-                BuscarCoincidencias(Resultado, n.Izquierdo, v);
-                BuscarCoincidencias(Resultado, n.Derecho, v);
+                BuscarCoincidencias(Resultado, (NodoAvl)n.Izquierdo, v);
+                BuscarCoincidencias(Resultado, (NodoAvl)n.Derecho, v);
             }
 
             return Resultado;

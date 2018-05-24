@@ -85,5 +85,10 @@ namespace RedSocial_Programacionlll.Datos
             return tabla[Posicion];
         }
 
+
+        public bool BuscarLocal(Guid Id)
+        {
+            return EnumeratorList.Buscar(Id) != null;
+        }
     }
 }

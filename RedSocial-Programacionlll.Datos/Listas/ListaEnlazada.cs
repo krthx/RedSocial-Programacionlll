@@ -36,5 +36,20 @@
 
             return false;
         }
+
+        public T Buscar(T t)
+        {
+            var a = Inicio;
+
+            while(a != null)
+            {
+                if (a.Dato.Equals(t))
+                    return a.Dato;
+
+                a = a.Enlace;
+            }
+
+            return default(T);
+        }
     }
 }

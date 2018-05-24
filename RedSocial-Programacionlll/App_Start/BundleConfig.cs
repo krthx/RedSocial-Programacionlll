@@ -36,7 +36,8 @@ namespace RedSocial_Programacionlll
 
             bundles.Add(new ScriptBundle("~/bundles/extra").Include(
                             "~/Content/Framework/JQuery/jquery-3.3.1.min.js",
-                            "~/Content/Framework/SemanticUI/semantic.min.js"));
+                            "~/Content/Framework/SemanticUI/semantic.min.js",
+                            "~/Content/Recursos/Js/site.js"));
 
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",
