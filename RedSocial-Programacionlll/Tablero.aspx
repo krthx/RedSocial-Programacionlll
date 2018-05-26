@@ -2,7 +2,10 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <asp:ScriptManager ID="scm" runat="server" EnablePageMethods="true" />
+    <asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" Runat="Server"> 
+        
+
+    </asp:ScriptManager>
     <div class="ui two column doubling stackable grid container">
       <div class="column" style="width: 30%">
         <div class="ui special card">
@@ -13,7 +16,7 @@
                       <asp:LinkButton runat="server" OnClick="CerrarSesion" CssClass="ui blue icon button">
                           <i class="power off icon"></i>
                       </asp:LinkButton>
-                      <asp:LinkButton runat="server" CssClass="ui blue icon button">
+                      <asp:LinkButton runat="server" OnClick="ActualizarDatos" CssClass="ui blue icon button">
                           <i class="pencil alternate icon"></i>
                       </asp:LinkButton>
                   </div>
@@ -50,11 +53,11 @@
         <hr />
         <div class="ui middle aligned selection list" style="height: 300px; margin-top: 10px; overflow-y: scroll">
             <asp:TextBox runat="server" ID="TxtHidden" Visible="false" ></asp:TextBox>
-            <% var Enumerator_ = Usuario.Seguidores.EnumeratorList;%>
+            <% var Enumerator_ = Usuario.Seguidos.EnumeratorList;%>
             <% var NodoSeg = Enumerator_.Inicio; %>
 
             <% while (NodoSeg != null) { %>
-	            <% var Registro = Usuario.Seguidores.Buscar(NodoSeg.Dato); %>
+	            <% var Registro = Usuario.Seguidos.Buscar(NodoSeg.Dato); %>
                 <% if(typeof(Usuario).Equals(Registro.GetType())) {%>
                     <% var item = (Usuario)Registro; %>
                     <% TxtHidden.Text = item.NombreUsuario; %>
@@ -72,12 +75,18 @@
 		            <% var Complex = (ListaEnlazada<Usuario>)Registro; %>
                     <% var NodoComp = Complex.Inicio; %>
                     <% while (NodoComp != null) { %>
-                        <div class="item">
-		                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/helen.jpg">
-		                    <div class="content">
-		                      <div class="header"><%: ((Usuario)NodoComp.Dato).NombreUsuario %></div>
+                        <% var ncItem = NodoComp.Dato; %>
+                        <% TxtHidden.Text = ncItem.NombreUsuario; %>
+            
+                        <asp:LinkButton runat="server" data-usr="<%= TxtHidden.Text %>" CssClass="itm-block" OnClick="VisitarPerfil">
+                            <div class="item">
+		                        <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/helen.jpg">
+		                        <div class="content">
+		                          <div class="header"><%= TxtHidden.Text %></div>
+		                        </div>
 		                    </div>
-		                </div>
+                        </asp:LinkButton>
+
                        <% NodoComp = NodoComp.Enlace; %>
                     <% } %>
 
@@ -90,31 +99,41 @@
         <h3>Seguidores</h3>
         <hr />
         <div class="ui middle aligned selection list" style="height: 300px; margin-top: 10px;  overflow-y: scroll">
-            <% var EnumeratorS = Usuario.Seguidos.EnumeratorList;%>
+            <% var EnumeratorS = Usuario.Seguidores.EnumeratorList;%>
             <% var NodoSeg2 = EnumeratorS.Inicio; %>
 
 
             <% while (NodoSeg2 != null) { %>
-	            <% var Registro2 = Usuario.Seguidos.Buscar(NodoSeg2.Dato); %>
+	            <% var Registro2 = Usuario.Seguidores.Buscar(NodoSeg2.Dato); %>
                 <% if(typeof(Usuario).Equals(Registro2.GetType())) {%>
-    
-                    <div class="item">
-		                <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small//helen.jpg">
-		                <div class="content">
-		                  <div class="header"><%: ((Usuario)Registro2).NombreUsuario %></div>
+                    <% var item2 = (Usuario)Registro2; %>
+                    <% TxtHidden.Text = item2.NombreUsuario; %>
+                    
+                    <asp:LinkButton runat="server" data-usr="<%= TxtHidden.Text %>" CssClass="itm-block" OnClick="VisitarPerfil">
+                        <div class="item">
+		                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small//helen.jpg">
+		                    <div class="content">
+		                      <div class="header"><%= TxtHidden.Text %></div>
+		                    </div>
 		                </div>
-		            </div>
+                    </asp:LinkButton>
 
 	            <%} else {%>
 		            <% var Complex2= (ListaEnlazada<Usuario>)Registro2; %>
                     <% var NodoComp2 = Complex2.Inicio; %>
                     <% while (NodoComp2 != null) { %>
-                        <div class="item">
-		                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/helen.jpg">
-		                    <div class="content">
-		                      <div class="header"><%: ((Usuario)NodoComp2.Dato).NombreUsuario %></div>
+                        <% var nssItem = NodoComp2.Dato; %>
+                        <% TxtHidden.Text = nssItem.NombreUsuario; %>
+
+                        <asp:LinkButton runat="server" data-usr="<%= TxtHidden.Text %>" CssClass="itm-block" OnClick="VisitarPerfil">
+                            <div class="item">
+		                        <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/helen.jpg">
+		                        <div class="content">
+		                          <div class="header"><%= TxtHidden.Text %></div>
+		                        </div>
 		                    </div>
-		                </div>
+                        </asp:LinkButton>
+
                        <% NodoComp2 = NodoComp2.Enlace; %>
                     <% } %>
 
@@ -128,7 +147,7 @@
       <div class="column" style="width: 70%;">
         <div class="ui search">
           <div class="ui icon input" style="width: 100%">
-            <asp:TextBox runat="server" class="prompt" type="text" id="TxtBusqueda" placeholder="Buscar usuarios..." onkeyup="BuscarPerfil"></asp:TextBox>
+            <asp:TextBox runat="server" class="prompt txt-search" type="text" id="TxtBusqueda" placeholder="Buscar usuarios..."></asp:TextBox>
             <i class="search icon"></i>
           </div>
           <div runat="server" class="results"></div>
@@ -145,7 +164,7 @@
             </div>
         </div>
         <div class="ui segment" style="background: #f1f1f1; height: auto; min-height: 500px;">
-            <% var NodoPub = Usuario.Publicaciones.Primero; %>
+            <% var NodoPub = Usuario.Muro.Primero; %>
             
             <% while (NodoPub != null) { %>
                 <% var Pub = (Publicacion) NodoPub.Dato; %>
@@ -172,5 +191,5 @@
         </div>
       </div>
     </div>
-
+    <asp:LinkButton runat="server" ID="hiddenButton" Visible="false" data-usr="" OnClick="VisitarPerfil"></asp:LinkButton>
 </asp:Content>

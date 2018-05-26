@@ -22,16 +22,21 @@
         public bool Eliminar(T t)
         {
             NodoSimple<T> n = Inicio;
+            NodoSimple<T> nAnterior = null;
 
-            while(n != null)
+            while (n != null)
             {
+                if (n.Dato.Equals(t))
+                {
+                    if (nAnterior == null)
+                        nAnterior = Inicio;
 
-                //if(n.Dato.Equals(t))
-                //{
-                //    n.
-                //}
+                    nAnterior.Enlace = n.Enlace;
+                }
+                else
+                    nAnterior = n;
 
-                n = n.Enlace;
+                n = n?.Enlace;
             }
 
             return false;

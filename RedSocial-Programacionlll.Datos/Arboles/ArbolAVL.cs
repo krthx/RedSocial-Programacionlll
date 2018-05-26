@@ -411,7 +411,7 @@ namespace RedSocial_Programacionlll.Datos
         {
             if (n != null)
             {
-                if(v.Contains(n.Dato))
+                if(((Comparador)n.Dato).Contains(v))
                     Resultado.Agregar((Usuario)n.Dato);
 
                 BuscarCoincidencias(Resultado, (NodoAvl)n.Izquierdo, v);

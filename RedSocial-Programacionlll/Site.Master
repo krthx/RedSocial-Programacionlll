@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><%: Page.Title %> - Proyecto Final</title>
         <link href="Content/Recursos/Css/Sitio.css" rel="stylesheet" />
+        
         <asp:PlaceHolder runat="server">
             <%: Styles.Render("~/bundles/css") %>
             <%: Scripts.Render("~/bundles/modernizr") %>
@@ -16,7 +17,6 @@
             <%: Scripts.Render("~/bundles/MsAjaxJs") %>
             <%: Scripts.Render("~/bundles/extra") %>
         </asp:PlaceHolder>
-
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     </head>

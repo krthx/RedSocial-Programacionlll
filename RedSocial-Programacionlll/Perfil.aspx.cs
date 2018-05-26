@@ -13,8 +13,17 @@ namespace RedSocial_Programacionlll
         }
 
         protected void Regresar(object sender, EventArgs e)
-        {
+        {            
             Response.Redirect("Tablero.aspx");
+        }
+
+        protected void SeguirUsuario(object sender, EventArgs e)
+        {
+            var p = ListaContext.Visitar;
+            var c = ListaContext.Conectado;
+
+            ListaContext.Conectado.Seguidos.Insertar(p.Id, p);
+            ListaContext.Visitar.Seguidores.Insertar(c.Id, c);
         }
     }
 }

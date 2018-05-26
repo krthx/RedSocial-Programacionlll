@@ -31,10 +31,17 @@ namespace RedSocial_Programacionlll.Datos
             if (nuevo)
                 Id = Guid.NewGuid();
                 
-            Seguidores = new Hash();
-            Seguidos = new Hash();
-            Publicaciones = new ListaDobleEnlazada<Publicacion>();
-            Muro = new ListaDobleEnlazada<Publicacion>();
+            if(Seguidores == null)
+                Seguidores = new Hash();
+
+            if (Seguidos == null)
+                Seguidos = new Hash();
+
+            if (Publicaciones == null)
+                Publicaciones = new ListaDobleEnlazada<Publicacion>();
+
+            if (Muro == null)
+                Muro = new ListaDobleEnlazada<Publicacion>();
         } 
 
         bool Comparador.IgualQue(object q)

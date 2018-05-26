@@ -9,6 +9,7 @@
             <i class="left arrow icon"></i>
             Regresar al Tablero
         </asp:LinkButton>
+
         <div class="ui card">
           <div class="image">
             <img src="https://semantic-ui.com/images/avatar2/large/kristy.png">
@@ -38,19 +39,23 @@
           </div>
         </div>
 
+          <asp:LinkButton runat="server" ID="SeguirBtn" OnClick="SeguirUsuario" CssClass="ui blue left labeled icon button" style="width: 200px">
+              <i class="user plus icon"></i> Seguir
+          </asp:LinkButton>
+
         <h3>Seguidos</h3>
         <hr />
         <div class="ui middle aligned selection list" style="height: 30%; margin-top: 10px; overflow-y: scroll">
-          <% var Enumerator_ = Usuario.Seguidores.EnumeratorList;%>
+          <% var Enumerator_ = Usuario.Seguidos.EnumeratorList;%>
             <% var NodoSeg = Enumerator_.Inicio; %>
 
 
             <% while (NodoSeg != null) { %>
-	            <% var Registro = Usuario.Seguidores.Buscar(NodoSeg.Dato); %>
+	            <% var Registro = Usuario.Seguidos.Buscar(NodoSeg.Dato); %>
                 <% if(typeof(Usuario).Equals(Registro.GetType())) {%>
     
                     <div class="item">
-		                <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
 		                <div class="content">
 		                  <div class="header"><%: ((Usuario)Registro).NombreUsuario %></div>
 		                </div>
@@ -61,7 +66,7 @@
                     <% var NodoComp = Complex.Inicio; %>
                     <% while (NodoComp != null) { %>
                         <div class="item">
-		                    <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
 		                    <div class="content">
 		                      <div class="header"><%: ((Usuario)NodoComp.Dato).NombreUsuario %></div>
 		                    </div>
@@ -78,16 +83,16 @@
         <h3>Seguidores</h3>
         <hr />
         <div class="ui middle aligned selection list" style="height: 30%; margin-top: 10px;  overflow-y: scroll">
-          <% var EnumeratorS = Usuario.Seguidos.EnumeratorList;%>
+          <% var EnumeratorS = Usuario.Seguidores.EnumeratorList;%>
             <% var NodoSeg2 = EnumeratorS.Inicio; %>
 
 
             <% while (NodoSeg2 != null) { %>
-	            <% var Registro2 = Usuario.Seguidos.Buscar(NodoSeg2.Dato); %>
+	            <% var Registro2 = Usuario.Seguidores.Buscar(NodoSeg2.Dato); %>
                 <% if(typeof(Usuario).Equals(Registro2.GetType())) {%>
     
                     <div class="item">
-		                <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
 		                <div class="content">
 		                  <div class="header"><%: ((Usuario)Registro2).NombreUsuario %></div>
 		                </div>
@@ -98,7 +103,7 @@
                     <% var NodoComp2 = Complex2.Inicio; %>
                     <% while (NodoComp2 != null) { %>
                         <div class="item">
-		                    <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+		                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
 		                    <div class="content">
 		                      <div class="header"><%: ((Usuario)NodoComp2.Dato).NombreUsuario %></div>
 		                    </div>

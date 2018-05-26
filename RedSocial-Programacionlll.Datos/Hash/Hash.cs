@@ -30,32 +30,35 @@ namespace RedSocial_Programacionlll.Datos
 
         public void Insertar(Guid Clave, Object Dato)
         {
-            Posicion = HashMod(Clave);
-
-            if(tabla[Posicion] == null)
-                tabla[Posicion] = Dato;
-            else
+            if(!BuscarLocal(Clave))
             {
-                var actual = tabla[Posicion];
-                ListaEnlazada<Usuario> colisiones = null;
+                Posicion = HashMod(Clave);
 
-                if (typeof(Usuario).Equals(actual.GetType()))
-                {
-                    colisiones = new ListaEnlazada<Usuario>();
-                    colisiones.Agregar((Usuario)actual);
-                }
+                if (tabla[Posicion] == null)
+                    tabla[Posicion] = Dato;
                 else
-                    colisiones = (ListaEnlazada<Usuario>)actual;
-                
+                {
+                    var actual = tabla[Posicion];
+                    ListaEnlazada<Usuario> colisiones = null;
 
-                colisiones.Agregar((Usuario)Dato);
+                    if (typeof(Usuario).Equals(actual.GetType()))
+                    {
+                        colisiones = new ListaEnlazada<Usuario>();
+                        colisiones.Agregar((Usuario)actual);
+                    }
+                    else
+                        colisiones = (ListaEnlazada<Usuario>)actual;
 
-                tabla[Posicion] = colisiones;
+
+                    colisiones.Agregar((Usuario)Dato);
+
+                    tabla[Posicion] = colisiones;
+                }
+
+                EnumeratorList.Agregar(Clave);
+
+                Count++;
             }
-
-            EnumeratorList.Agregar(Clave);
-
-            Count++;
         }
 
         public void Eliminar(Guid Clave)
@@ -88,7 +91,7 @@ namespace RedSocial_Programacionlll.Datos
 
         public bool BuscarLocal(Guid Id)
         {
-            return EnumeratorList.Buscar(Id) != null;
+            return EnumeratorList.Buscar(Id) != default(Guid);
         }
     }
 }

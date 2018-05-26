@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.Services;
 using System.Dynamic;
 using System.Web.Script.Serialization;
 using System.Web.Script.Services;
-using System.Web.Services;
-using System.Web.UI.WebControls;
 using RedSocial_Programacionlll.Datos;
 using RedSocial_Programacionlll.Source;
 
@@ -15,11 +17,27 @@ namespace RedSocial_Programacionlll
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario = ListaContext.Conectado;
+
+            //Page.GetPostBackEventReference(hiddenButton);
         }
 
         protected void AgregarPublicacion(object sender, EventArgs e)
-        {            
-            ListaContext.Conectado.Publicaciones.Agregar(new Publicacion(true) { Descripcion = TxtPublicacion.Text, FechaCreacion = DateTime.Now });
+        {
+            var publicacion = new Publicacion(true) { Descripcion = TxtPublicacion.Text, FechaCreacion = DateTime.Now };
+
+            ListaContext.Conectado.Publicaciones.Agregar(publicacion);
+            ListaContext.Conectado.Muro.Agregar(publicacion);
+
+            var seg = ListaContext.Conectado.Seguidores.EnumeratorList;
+            var Nod = seg.Inicio;
+
+            while(Nod != null)
+            {
+                var s = ListaContext.Conectado.Seguidores.Buscar(((Guid)Nod.Dato));
+                ((Usuario)s).Muro.Agregar(publicacion);
+
+                Nod = Nod.Enlace;
+            }
 
             TxtPublicacion.Text = String.Empty;
         }
@@ -34,14 +52,15 @@ namespace RedSocial_Programacionlll
 
         }
 
-        [WebMethod]
+        [System.Web.Services.WebMethod]
         [ScriptMethod(UseHttpGet = true)]
         public static String BuscarPerfil(String Busqueda)
         {
             var coincidencias = ListaContext.BuscarCoincidencias(Busqueda);
 
             var c = coincidencias.Inicio;
-            dynamic json = new ExpandoObject();
+            object[] json = new object[0];
+
             var count = 0;
 
             while(c != null)
@@ -49,43 +68,28 @@ namespace RedSocial_Programacionlll
                 dynamic it = new ExpandoObject();
                 var dat = c.Dato;
 
-                it.Amigos = ListaContext.Conectado.Seguidos.BuscarLocal(dat.Id);
-                it.NombreUsuario = dat.NombreUsuario;
-                it.Foto = dat.Foto;
+                var resultado = ListaContext.Conectado.Seguidos.BuscarLocal(dat.Id);
 
-                json[count] = it;
+                var me = ListaContext.Conectado.Id.CompareTo(dat.Id);
+                it.Categoria = (resultado == false) ? "Otros" : "Seguidos";
+
+                if (me == 0)
+                    it.Categoria = "Yo";
+
+                Array.Resize(ref json, json.Length + 1);
+                json[json.Length - 1] = new { dat.NombreUsuario, dat.Foto, it.Categoria };
                 count++;
+
+                c = c.Enlace;
             }
 
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             return serializer.Serialize(json);
         }
-
-        [WebMethod]
-        public static String BuscarPerfil2()
-        {
-            return "Ok";
-        }
-
-        [WebMethod]
-        public String BuscarPerfil3()
-        {
-            return "Ok";
-        }
-
+        
         protected void ActualizarDatos(object sender, EventArgs e)
         {
-
-        }
-
-        protected void EliminarCuenta(object sender, EventArgs e)
-        {
-            
-        }
-
-        ListaDobleEnlazada<Publicacion> ArmarMuro()
-        {
-            return null;
+            Response.Redirect("ActualizarInfo.aspx");
         }
 
         protected void EliminarPublicacion(object sender, EventArgs e)
@@ -109,6 +113,13 @@ namespace RedSocial_Programacionlll
 
             Response.Redirect("Perfil.aspx");
 
+        }
+
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true)]
+        public static void VisitarPerfil(String Usr)
+        {
+            ListaContext.BuscarPerfil(Usr);
         }
     }
 } 

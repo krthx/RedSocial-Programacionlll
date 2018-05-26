@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web.Script.Services;
+using System.Web.Services;
 using RedSocial_Programacionlll.Source;
 
 namespace RedSocial_Programacionlll
@@ -27,5 +29,15 @@ namespace RedSocial_Programacionlll
             else
                 Response.Redirect("Tablero.aspx");
         }
+
+
+        //[WebMethod]
+        //[ScriptMethod(UseHttpGet = true)]
+        //public static void VisitarPerfil(String Usr)
+        //{
+        //    ListaContext.BuscarPerfil(Usr);
+
+        //    Response.Redirect("Perfil.aspx");
+        //}
     }
 }
