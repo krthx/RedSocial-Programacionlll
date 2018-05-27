@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 using RedSocial_Programacionlll.Datos;
 using RedSocial_Programacionlll.Source;
 
@@ -24,6 +25,18 @@ namespace RedSocial_Programacionlll
 
             ListaContext.Conectado.Seguidos.Insertar(p.Id, p);
             ListaContext.Visitar.Seguidores.Insertar(c.Id, c);
+        }
+
+
+        protected void VisitarPerfil(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            String Usr = lnk.Attributes["data-usr"].ToString();
+
+            ListaContext.BuscarPerfil(Usr);
+
+            Response.Redirect("Perfil.aspx");
+
         }
     }
 }

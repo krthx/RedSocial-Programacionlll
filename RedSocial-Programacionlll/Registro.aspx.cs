@@ -15,18 +15,26 @@ namespace RedSocial_Programacionlll
         {
             var nombre = Nombre.Text;
             var usuario = Usuario.Text;
+            var foto = Foto.Text;
             var fecha = FechaNacimiento.Text;
             var contrasena = Contrasena.Text;
 
-            try
+            if(nombre.Equals("") || usuario.Equals("") || foto.Equals("") || fecha.Equals("") || contrasena.Equals(""))
             {
-                ListaContext.Usuarios.Insertar(new Usuario(ListaContext.Nuevo) { Nombre = nombre, NombreUsuario = usuario, FechaNacimiento = fecha, Contrasena = contrasena, Creacion = DateTime.Today });
-
-                Response.Redirect("InicioSesion.aspx");
+                ErrorMessage.Text = "Llene todos los campos";
             }
-            catch (Exception exc)
+            else
             {
-                ErrorMessage.Text = "El usuario ya existe, intente otro";
+                try
+                {
+                    ListaContext.Usuarios.Insertar(new Usuario(ListaContext.Nuevo) { Nombre = nombre, NombreUsuario = usuario, FechaNacimiento = fecha, Contrasena = contrasena, Creacion = DateTime.Today, Foto = foto });
+
+                    Response.Redirect("InicioSesion.aspx");
+                }
+                catch (Exception exc)
+                {
+                    ErrorMessage.Text = "El usuario ya existe, intente otro";
+                }
             }
         }
 

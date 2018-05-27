@@ -23,7 +23,7 @@ namespace RedSocial_Programacionlll
 
         protected void AgregarPublicacion(object sender, EventArgs e)
         {
-            var publicacion = new Publicacion(true) { Descripcion = TxtPublicacion.Text, FechaCreacion = DateTime.Now };
+            var publicacion = new Publicacion(true) { Descripcion = TxtPublicacion.Text, FechaCreacion = DateTime.Now, Usuario = ListaContext.Conectado.NombreUsuario, Nombre = ListaContext.Conectado.Nombre };
 
             ListaContext.Conectado.Publicaciones.Agregar(publicacion);
             ListaContext.Conectado.Muro.Agregar(publicacion);

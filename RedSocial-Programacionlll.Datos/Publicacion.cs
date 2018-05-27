@@ -18,6 +18,10 @@ namespace RedSocial_Programacionlll.Datos
 
         public Int32 Dislikes { get; set; }
 
+        public String Usuario { get; set; }
+
+        public String Nombre { get; set; }
+
         public Publicacion(Boolean nuevo)
         {
             if (nuevo)

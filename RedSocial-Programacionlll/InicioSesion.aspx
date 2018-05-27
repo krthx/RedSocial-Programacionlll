@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="InicioSesion.aspx.cs" Inherits="RedSocial_Programacionlll.InicioSesion" %>
+﻿<%@ Page Title="Inicio Sesion" Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="InicioSesion.aspx.cs" Inherits="RedSocial_Programacionlll.InicioSesion" %>
 
 <asp:Content runat="server" ID="Background"  ContentPlaceHolderID="Background">    
     <div class="background-2"></div>

@@ -7,3 +7,11 @@ C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.csproj.CopyComplete
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.dll
 C:\Users\krthx\Documents\@KRTHX\UMG\QuintoSemestre\ProgramacionIII\ProyectoFinal\RedSocial-Programacionlll\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.pdb
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\bin\Debug\RedSocial-Programacionlll.Datos.dll
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\bin\Debug\RedSocial-Programacionlll.Datos.pdb
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\bin\Debug\log4net.dll
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\bin\Debug\log4net.xml
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.csprojResolveAssemblyReference.cache
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.csproj.CoreCompileInputs.cache
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.dll
+C:\Users\bpaniagua\Downloads\RedSocial-Programacionlll-master\RedSocial-Programacionlll.Datos\obj\Debug\RedSocial-Programacionlll.Datos.pdb

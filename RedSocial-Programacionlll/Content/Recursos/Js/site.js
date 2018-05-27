@@ -48,6 +48,18 @@ Site.ui = {
         $('.special.card .image').dimmer({ on: 'hover' });
 
         $('.txt-search').on('keyup', Site.ui.buscarPerfil);
+    },
+    VisitarPerfil: function (usr) {
+        $.ajax({
+            type: "GET",
+            url: 'Tablero.aspx/VisitarPerfil?Usr="' + usr + '"',
+            data: '',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                window.location.href = 'Perfil.aspx';
+            }
+        });
     }
 }
 

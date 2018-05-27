@@ -51,6 +51,8 @@
     <Compile Include="Listas\NodoListaEnlazada.cs" />
     <Compile Include="Listas\NodoSimple.cs" />
     <Compile Include="Publicacion.cs" />
+    <Compile Include="Seguidos.cs" />
+    <Compile Include="Tuits.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Comparador.cs" />
     <Compile Include="Arboles\Logical.cs" />

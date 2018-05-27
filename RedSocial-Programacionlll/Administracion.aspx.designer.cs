@@ -7,54 +7,45 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace RedSocial_Programacionlll {
+namespace Intento2 {
     
     
-    public partial class Tablero {
+    public partial class Administracion {
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control BtnTwits.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Button BtnTwits;
         
         /// <summary>
-        /// Control TxtHidden2.
+        /// Control BtnUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtHidden2;
+        protected global::System.Web.UI.WebControls.Button BtnUsuarios;
         
         /// <summary>
-        /// Control TxtBusqueda.
+        /// Control BtnSeguidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBusqueda;
+        protected global::System.Web.UI.WebControls.Button BtnSeguidos;
         
         /// <summary>
-        /// Control TxtPublicacion.
+        /// Control richTexbox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPublicacion;
-        
-        /// <summary>
-        /// Control hiddenButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton hiddenButton;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl richTexbox;
     }
 }

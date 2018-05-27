@@ -5,7 +5,7 @@
     <div class="background-cover"></div>
 </asp:Content>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content Title="Tablero" runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
     <h2><%: Title %></h2>
     <div class="ui form" style="margin-top: 30%">
@@ -22,35 +22,42 @@
             
             <div class="field">
                 <label>Nombre</label>
-                <asp:TextBox runat="server" ID="Nombre" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="Nombre" CssClass="form-control" required="true" />
                 <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre"
                     CssClass="ui negative message" ErrorMessage="El campo de nombre es obligatorio." />--%>
             </div>
         
             <div class="field">
                 <label>Nombre de Usuario</label>
-                <asp:TextBox runat="server" ID="Usuario" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="Usuario" CssClass="form-control"  required="true" />
                 <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Usuario"
                     CssClass="ui negative message" ErrorMessage="El campo de usuario es obligatorio." />--%>
             </div>
 
             <div class="field">
                 <label>Fecha de Nacimiento</label>
-                <asp:TextBox  runat="server" type="date" ID="FechaNacimiento" CssClass="form-control" />
+                <asp:TextBox  runat="server" type="date" ID="FechaNacimiento" CssClass="form-control"  required="true" />
+                <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre"
+                    CssClass="ui negative message" ErrorMessage="El campo de nombre es obligatorio." />--%>
+            </div>
+
+            <div class="field">
+                <label>Path Foto</label>
+                <asp:TextBox  runat="server" type="text" ID="Foto" CssClass="form-control"  required="true" />
                 <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Nombre"
                     CssClass="ui negative message" ErrorMessage="El campo de nombre es obligatorio." />--%>
             </div>
 
             <div class="field">
                 <label>Contraseña</label>
-                <asp:TextBox runat="server" ID="Contrasena" TextMode="Password" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="Contrasena" TextMode="Password" CssClass="form-control"  required="true" />
                 <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                     CssClass="text-danger" ErrorMessage="El campo de contraseña es obligatorio." />--%>
             </div>
 
             <div class="field">
                 <label>Confirmar contraseña</label>
-                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" required="true" />
                 <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="El campo de confirmación de contraseña es obligatorio." />
                 <asp:CompareValidator runat="server" ControlToCompare="Contrasena" ControlToValidate="ConfirmaContrasena"

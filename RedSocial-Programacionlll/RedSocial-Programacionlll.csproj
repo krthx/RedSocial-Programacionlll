@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActualizarInfo.aspx" />
+    <Content Include="Administracion.aspx" />
     <Content Include="Content\Framework\JQuery\jquery-3.3.1.min.js" />
     <Content Include="Content\Framework\Modernizr\modernizr-2.6.2.js" />
     <Content Include="Content\Framework\SemanticUI\semantic.min.css" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="ActualizarInfo.aspx.designer.cs">
       <DependentUpon>ActualizarInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion.aspx.cs">
+      <DependentUpon>Administracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion.aspx.designer.cs">
+      <DependentUpon>Administracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
